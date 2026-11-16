@@ -72,27 +72,65 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+for (let i = 0; i < sayilar.length; i++) {
+  if (i === 0) {
+	enkucuk = sayilar[i];
+	enbuyuk = sayilar[i];
+  } else {
+	if (sayilar[i] < enkucuk) {
+	  enkucuk = sayilar[i];
+	}
+	if (sayilar[i] > enbuyuk) {
+	  enbuyuk = sayilar[i];
+	}
+  }
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+sayilar.forEach((sayi) => {
+  if (sayi % 3 === 0) {
+	if (!ucetambolunenler) {
+	  ucetambolunenler = [];
+	}
+	ucetambolunenler.push(sayi);
+  }
+});
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, sayi) => toplam + sayi, 0);
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
 
 // 3f çözümü
 
-/* kodlar buraya */
+tekraredensayilar = [];
+const sayiSayaci = {};
+
+sayilar.forEach((sayi) => {
+  if (sayiSayaci[sayi]) {
+	sayiSayaci[sayi]++;
+  } else {
+	sayiSayaci[sayi] = 1;
+  }
+});
+
+for (const sayi in sayiSayaci) {
+  if (sayiSayaci[sayi] > 1) {
+	tekraredensayilar.push(
+	  `${sayi} sayısı ${sayiSayaci[sayi]} kere tekrar edilmiştir`
+	);
+  }
+}
+
+/* (Oto test yok) Yukarıdaki görevleri tamamladıktan sonra aşağıdaki değişkenleri konsolda gözlemleyin */
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 module.exports = {
